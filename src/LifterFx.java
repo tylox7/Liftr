@@ -3,6 +3,8 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -31,8 +33,17 @@ public class LifterFx extends Application {
       sceneTitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
       grid.add(sceneTitle, 0, 0, 2, 1);
 
-      Label liftNameLabel = new Label("Lift Name: ");
+      Label liftNameLabel = new Label("Name: ");
       grid.add(liftNameLabel, 0, 1);
+
+      TextField nameTextField = new TextField();
+      grid.add(nameTextField, 1, 1);
+
+      Label favoriteLift = new Label("Favorite Lift:");
+      grid.add(favoriteLift, 0, 2);
+
+      PasswordField secretLift = new PasswordField();
+      grid.add(secretLift, 1, 2);
 
       Scene scene = new Scene(grid, 300, 275);
       primaryStage.setScene(scene);
