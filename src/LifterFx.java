@@ -36,7 +36,7 @@ public class LifterFx extends Application {
 
       // Header text for form
       Text sceneTitle = new Text("Welcome to Liftr.");
-      sceneTitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+      sceneTitle.setId("sceneTitle");
       grid.add(sceneTitle, 0, 0, 2, 1);
 
       // Label for name field
@@ -65,21 +65,22 @@ public class LifterFx extends Application {
 
       // Text control to display message after button is clicked
       final Text actionTarget = new Text();
+      actionTarget.setId("actionTarget");
       grid.add(actionTarget, 1, 6);
 
       // Handle button click event
       btn.setOnAction(new EventHandler<ActionEvent>() {
          @Override
          public void handle(ActionEvent event) {
-            actionTarget.setFill(Color.FIREBRICK);
             actionTarget.setText("Time to " + secretLift.getText()
                + " " + nameTextField.getText());
          }
       });
 
       // Set scene size and show it on the screen
-      Scene scene = new Scene(grid, 300, 275);
+      Scene scene = new Scene(grid, 500, 275);
       primaryStage.setScene(scene);
+      scene.getStylesheets().add(LifterFx.class.getResource("liftrStyles.css").toExternalForm());
       primaryStage.show();
    }
 }
