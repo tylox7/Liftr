@@ -23,7 +23,7 @@ public class LifterFx extends Application {
    }
 
    @Override
-   public void start(Stage primaryStage) {
+   public void start(Stage primaryStage) throws Exception {
       // Set window pane title
       primaryStage.setTitle("Liftr");
 
