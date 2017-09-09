@@ -1,0 +1,22 @@
+Failing hard at git
+ Please entet
+ 
+ the commit message for your changes. Lines starting
+# witt
+exit
+' wilt
+be ignored, and an empty message aborts the commit.
+#t
+:qui
+:quit
+t
+On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   out/production/Liftr/FXMLController.class
+#	new file:   out/production/Liftr/fxml_initial.fxml
+#
+# Changes not staged for commit:
+#	modified:   .gitignore
+#
