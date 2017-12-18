@@ -97,6 +97,7 @@ public class DBUtil {
          if (statement != null) {
             statement.close();
          }
+         // Disconnect from DB
          dbDisconnect();
       }
    }
