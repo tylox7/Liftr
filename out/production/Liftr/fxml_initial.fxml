@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<?import javafx.scene.chart.BarChart?>
 <GridPane fx:controller="FXMLController" xmlns:fx="http://javafx.com/fxml"
           alignment="center" hgap="10" vgap="10">
     <padding>
@@ -16,18 +15,28 @@
     <Text text="Welcome to Liftr" id="sceneTitle" GridPane.columnIndex="0"
           GridPane.rowIndex="0" GridPane.columnSpan="2"/>
 
-    <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-    <TextField fx:id="nameTextField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="First Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="firstNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
-    <Label text="Favorite lift:" GridPane.columnIndex="0"
+    <Label text="Last Name:" GridPane.columnIndex="0"
            GridPane.rowIndex="2"/>
 
-    <PasswordField fx:id="secretLift" GridPane.columnIndex="1"
+    <TextField fx:id="lastNameTextField" GridPane.columnIndex="1"
                    GridPane.rowIndex="2"/>
 
     <HBox spacing="10" alignment="BOTTOM_RIGHT" GridPane.columnIndex="1"
-          GridPane.rowIndex="4">
+          GridPane.rowIndex="3">
         <Button text="Submit" onAction="#handleSubmitButtonAction"/>
     </HBox>
-    <Text fx:id="actionTarget" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+    <Text fx:id="actionTarget" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <Label text="Search Last Name:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <TextField fx:id="searchTarget" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    <HBox spacing="10" alignment="BOTTOM_RIGHT" GridPane.columnIndex="1"
+          GridPane.rowIndex="6">
+        <Button text="Submit" onAction="#handleSearchButtonAction"/>
+    </HBox>
+    <Text fx:id="searchResult" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+
+
 </GridPane>
