@@ -2,3 +2,6 @@
 .idea/workspace.xml
 *iml
 /out/
+/out/production/Liftr/FXMLController.class
+/out/production/Liftr/LifterFx.class
+/out/production/Liftr/fxml_initial.fxml
