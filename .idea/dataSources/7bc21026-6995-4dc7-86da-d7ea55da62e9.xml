@@ -921,26 +921,78 @@
     <table id="232" parent="4" name="athlete">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="233" parent="232" name="athleteID">
+    <table id="233" parent="4" name="exercise">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="234" parent="4" name="history">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="235" parent="232" name="userID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="236" parent="232" name="firstName">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="237" parent="232" name="lastName">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="238" parent="232" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>userID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="239" parent="233" name="exerciseID">
       <Position>1</Position>
       <DataType>char(5)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="232" name="firstName">
+    <column id="240" parent="233" name="title">
       <Position>2</Position>
-      <DataType>varchar(25)|0</DataType>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="232" name="lastName">
+    <column id="241" parent="233" name="description">
       <Position>3</Position>
-      <DataType>varchar(25)|0</DataType>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="236" parent="232" name="PRIMARY">
+    <column id="242" parent="233" name="category">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="243" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>athleteID</ColNames>
+      <ColNames>exerciseID</ColNames>
       <Primary>1</Primary>
     </key>
+    <column id="244" parent="234" name="userID">
+      <Position>1</Position>
+      <DataType>char(5)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="245" parent="234" name="date_of_session">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="246" parent="234" name="sessionID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
   </database-model>
 </dataSource>

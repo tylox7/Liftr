@@ -9,14 +9,12 @@ public class DBUtil {
    // Connection
    private static Connection connection = null;
 
-   // Database location and login
-   private static final String connectionString = "jdbc:mysql://scott/tiger@localhost/liftrdb";
-
    // Connect to database
-   public static void dbConnect() throws SQLException, ClassNotFoundException {
+   private static void dbConnect() throws SQLException, ClassNotFoundException {
       // Setup Driver
       try {
          Class.forName(DRIVER);
+         System.out.println("Driver setup...");
       } catch (ClassNotFoundException e) {
          System.out.println("Incorrect Driver String");
          e.printStackTrace();
@@ -25,7 +23,9 @@ public class DBUtil {
 
       // Establish Connection
       try {
-         connection = DriverManager.getConnection(connectionString);
+         connection = DriverManager.getConnection("jdbc:mysql://localhost/liftrdb",
+            "scott", "tiger");
+         System.out.println("Connected to database...");
       } catch (SQLException e) {
          System.out.println("Connection String failed!");
          e.printStackTrace();
@@ -34,10 +34,11 @@ public class DBUtil {
 
    }
 
-   public static void dbDisconnect() throws SQLException {
+   private static void dbDisconnect() throws SQLException {
       try {
          if (connection != null && !connection.isClosed()) {
             connection.close();
+            System.out.println("Connection closed...");
          }
       } catch (SQLException e) {
          System.out.println("Something wrong with disconnecting.");
@@ -49,7 +50,7 @@ public class DBUtil {
    public static ResultSet dbExecuteQuery(String query) throws SQLException, ClassNotFoundException {
       Statement statement = null;
       ResultSet resultSet = null;
-      CachedRowSetImpl cachedRowSet = null;
+      CachedRowSetImpl cachedRowSet;
 
       try {
          // Connect to db
@@ -65,6 +66,7 @@ public class DBUtil {
          cachedRowSet = new CachedRowSetImpl(); // why the Impl?
          cachedRowSet.populate(resultSet);
       } catch (SQLException e) {
+         e.printStackTrace();
          throw e;
       } finally {
          if (resultSet != null) {
@@ -92,6 +94,7 @@ public class DBUtil {
          statement.executeUpdate(sqlStatement);
       } catch (SQLException e) {
          System.out.println("Problem at executeUpdate!");
+         e.printStackTrace();
          throw e;
       } finally {
          if (statement != null) {
