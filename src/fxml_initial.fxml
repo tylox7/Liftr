@@ -28,7 +28,7 @@
     <TextField fx:id="searchTarget" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
     <HBox spacing="10" alignment="BOTTOM_RIGHT" GridPane.columnIndex="1"
           GridPane.rowIndex="6">
-        <Button text="Submit" onAction="#handleSearchButtonAction"/>
+        <Button text="Search" onAction="#handleSearchButtonAction"/>
     </HBox>
     <Text fx:id="searchResult" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
 </GridPane>
